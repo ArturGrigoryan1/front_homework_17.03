@@ -41,6 +41,8 @@ pipeline {
                 echo "ban" >> jnjelu
                 cat jnjelu
                 git status
+                git add .
+                git status
                 '''
                 
             }
