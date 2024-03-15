@@ -49,9 +49,9 @@ pipeline {
                 git remote -v
                 git remote remove origin
                 git remote -v
+                git remote add origin https://{ArturGrigoryan1}:{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}@github.com/{ArturGrigoryan1}/devops_homework_17.03.git
+                git remote -v
                 '''
-            //    git remote add origin https://{ArturGrigoryan1}:{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}@github.com/{ArturGrigoryan1}/devops_homework_17.03.git
-                
             }
         }
     }
