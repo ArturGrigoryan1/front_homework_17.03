@@ -18,12 +18,9 @@ pipeline {
                 echo env.base
                 echo env.hash
                 sh 'ls -la'
-               // for (
-                sh '''tag="abcdefghijk"
-                echo $tag
-                esim = ${tag:0:6}
-                echo $esim
-                '''
+                tag=env.hash.charAt(1)
+                echo tag
+                
             }
         }
         stage('check merge and run docker') {
