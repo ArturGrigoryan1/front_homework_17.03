@@ -19,7 +19,7 @@ pipeline {
                 echo env.hash
                 sh 'ls -la'
                 var tag = env.hash.charAt(1)
-                println tag.class
+                println tag
             }
         }
         stage('check merge and run docker') {
