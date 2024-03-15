@@ -18,8 +18,8 @@ pipeline {
                 echo env.base
                 echo env.hash
                 sh 'ls -la'
-                var tag = env.hash.charAt(1);
-                System.out.println(tag)
+                var tag = env.hash.charAt(1)
+                echo tag
                 
             }
         }
