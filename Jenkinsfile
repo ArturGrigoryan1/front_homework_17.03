@@ -20,7 +20,7 @@ pipeline {
                 sh 'ls -la'
                // for (
                 sh '''tag = "abcdefghijk"
-                echo $tag
+                echo tag
                 tag = $tag[1...3]
                 '''
             }
