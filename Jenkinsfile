@@ -23,7 +23,7 @@ pipeline {
         }
         stage('check merge and run docker') {
             steps {
-              sh 'docker build -t front-image .'
+              sh 'docker build -t front-image:env.hash .'
               sh 'docker images'
             
             }
