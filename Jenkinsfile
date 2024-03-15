@@ -30,10 +30,12 @@ pipeline {
                 sh 'docker push arturgrigoryan1/front'
                 sh 'ls -la'
                 sh 'rm -r devops_homework_17.03'
+                sh 'rm -r devops_homework_17.03'
                 sh 'git clone https://github.com/ArturGrigoryan1/devops_homework_17.03.git'
                 sh 'ls -la'
-                sh 'cd devops_homework_17.03'
-                sh 'ls -la'
+                sh '''cd devops_homework_17.03
+                ls -la
+                '''
                 
             }
         }
