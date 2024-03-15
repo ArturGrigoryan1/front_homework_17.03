@@ -21,8 +21,8 @@ pipeline {
                // for (
                 sh '''tag="abcdefghijk"
                 echo $tag
-                tag = ${tag:0:6}
-                echo $tag
+                esim = ${tag:0:6}
+                echo $esim
                 '''
             }
         }
