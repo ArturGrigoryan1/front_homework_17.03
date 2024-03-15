@@ -21,7 +21,7 @@ pipeline {
                // for (
                 sh '''tag="abcdefghijk"
                 echo $tag
-                tag = $tag[1...3]
+                tag = $tag[1]
                 echo $tag
                 '''
             }
