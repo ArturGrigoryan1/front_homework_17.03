@@ -18,7 +18,7 @@ pipeline {
                 echo env.base
                 echo env.hash
                 sh 'ls -la'
-                enviroment {
+                environment {
                     tag = 'kjjkhjhkjhkjh'
                 }
                 ${env.tag}
