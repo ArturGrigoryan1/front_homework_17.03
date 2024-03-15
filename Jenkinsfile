@@ -17,12 +17,13 @@ pipeline {
                 echo 'Hello world'
                 echo env.base
                 echo env.hash
+                
                 sh 'ls -la'
             }
         }
         stage('check merge and run docker') {
             steps {
-              sh 'docker build front-image:(env.hash) .'
+              sh 'docker build front-image:$env.hash .'
               sh 'docker images'
             
             }
