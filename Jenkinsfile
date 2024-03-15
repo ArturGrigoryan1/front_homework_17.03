@@ -8,7 +8,7 @@ pipeline {
             
             ],
      causeString: 'Triggered on $base',
-     token: 'parol',
+     token: 'abc123',
      tokenCredentialId: '' )
     }
     stages {
