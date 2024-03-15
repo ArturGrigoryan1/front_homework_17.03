@@ -49,7 +49,7 @@ pipeline {
                 git remote -v
                 git remote remove origin
                 git remote -v
-                git remote add origin https://ArturGrigoryan1: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@github.com/ArturGrigoryan1/devops_homework_17.03.git
+                git remote add origin https://ArturGrigoryan1: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@github.com/ArturGrigoryan1/devops_homework_17.03.git
                 git remote -v
                 git push --set-upstream origin main
                 '''
