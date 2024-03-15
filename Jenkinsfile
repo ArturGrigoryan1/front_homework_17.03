@@ -18,15 +18,11 @@ pipeline {
                 echo env.base
                 echo env.hash
                 sh 'ls -la'
-                environment {
-                    tag = 'kjjkhjhkjhkjh'
-                }
-                ${env.tag}
             }
         }
         stage('check merge and run docker') {
             steps {
-              sh 'docker build front-image:$tag .'
+              sh 'docker build front-image:env.hash .'
               sh 'docker images'
             
             }
