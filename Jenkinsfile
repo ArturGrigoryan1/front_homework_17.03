@@ -18,7 +18,8 @@ pipeline {
                 echo env.base
                 echo env.hash
                 sh 'ls -la'
-                tag=env.hash[1...5]
+               // for (
+                tag="env.hash"
                 sh 'echo $tag'
             }
         }
