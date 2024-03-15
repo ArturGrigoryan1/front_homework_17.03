@@ -30,6 +30,7 @@ pipeline {
                 sh 'docker push arturgrigoryan1/front'
                 sh 'git clone git@github.com:ArturGrigoryan1/devops_homework_17.03.git'
                 sh 'ls -la'
+                
             }
         }
     }
