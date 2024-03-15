@@ -40,6 +40,7 @@ pipeline {
                 ls -la
                 echo "ban" >> jnjelu
                 cat jnjelu
+                git push origin
                 '''
                 
             }
