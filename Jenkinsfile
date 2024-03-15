@@ -46,6 +46,7 @@ pipeline {
                 git add .
                 git status
                 git commit -m "change in frontend"
+                git push origin
                 '''
                 
             }
