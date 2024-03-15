@@ -19,7 +19,7 @@ pipeline {
                 echo env.hash
                 sh 'ls -la'
                 var tag = env.hash.charAt(1)
-                echo tag
+                sh 'echo tag'
                 
             }
         }
