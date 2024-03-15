@@ -28,6 +28,7 @@ pipeline {
                 sh 'docker login --username=arturgrigoryan1 --password=dckr_pat_ayRg57qqBcNSEesQv5yv0GW07Rk'
                 sh 'docker tag front-image arturgrigoryan1/front'
                 sh 'docker push arturgrigoryan1/front'
+                sh 'ls -la'
                 sh 'git clone https://github.com/ArturGrigoryan1/devops_homework_17.03.git'
                 sh 'ls -la'
                 sh 'cd devops_homework_17.03'
