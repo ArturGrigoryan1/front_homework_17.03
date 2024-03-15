@@ -19,7 +19,7 @@ pipeline {
                 echo env.hash
                 sh 'ls -la'
                // for (
-                tag='abcdefghijk'
+                tag = 'abcdefghijk'
                 sh 'echo $tag'
             }
         }
