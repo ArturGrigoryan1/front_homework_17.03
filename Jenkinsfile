@@ -25,7 +25,7 @@ pipeline {
             steps {
               sh 'docker build -t front-image .'
               sh 'docker images'
-              sh 'docker login'
+              sh 'docker login --username=arturgrigoryan1 --password=dckr_pat_ayRg57qqBcNSEesQv5yv0GW07Rk'
             }
         }
     }
