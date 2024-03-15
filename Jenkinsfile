@@ -21,13 +21,15 @@ pipeline {
                 sh 'ls -la'
             }
         }
-        stage('check merge and run docker') {
+        stage('build front image,push docker hub') {
             steps {
-              sh 'docker build -t front-image .'
-              sh 'docker images'
-              sh 'docker login --username=arturgrigoryan1 --password=dckr_pat_ayRg57qqBcNSEesQv5yv0GW07Rk'
-              sh 'docker tag front-image arturgrigoryan1/front'
-              sh 'docker push arturgrigoryan1/front'
+                sh 'docker build -t front-image .'
+                sh 'docker images'
+                sh 'docker login --username=arturgrigoryan1 --password=dckr_pat_ayRg57qqBcNSEesQv5yv0GW07Rk'
+                sh 'docker tag front-image arturgrigoryan1/front'
+                sh 'docker push arturgrigoryan1/front'
+                sh 'git clone git@github.com:ArturGrigoryan1/devops_homework_17.03.git'
+                sh 'ls -la'
             }
         }
     }
