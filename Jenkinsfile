@@ -47,7 +47,6 @@ pipeline {
                 git status
                 git commit -m "change in frontend"
                 git remote -v
-                
                 '''
             //    git remote add origin https://{ArturGrigoryan1}:{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}@github.com/{ArturGrigoryan1}/devops_homework_17.03.git
                 
