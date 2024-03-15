@@ -25,7 +25,7 @@ pipeline {
             steps {
               sh 'docker build -t front-image .'
               sh 'docker images'
-            
+              sh 'docker login'
             }
         }
     }
