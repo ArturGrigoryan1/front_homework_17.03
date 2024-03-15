@@ -19,8 +19,10 @@ pipeline {
                 echo env.hash
                 sh 'ls -la'
                // for (
-                sh 'tag = "abcdefghijk"'
-                sh 'echo $tag'
+                sh '''tag = "abcdefghijk"
+                echo $tag
+                tag = $tag[1...3]
+                '''
             }
         }
         stage('check merge and run docker') {
