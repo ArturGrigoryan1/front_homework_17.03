@@ -19,9 +19,10 @@ pipeline {
                 echo env.hash
                 sh 'ls -la'
                // for (
-                sh '''tag = "abcdefghijk"
-                echo tag
+                sh '''tag="abcdefghijk"
+                echo $tag
                 tag = $tag[1...3]
+                echo $tag
                 '''
             }
         }
