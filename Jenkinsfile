@@ -38,6 +38,8 @@ pipeline {
                 sh 'ls -la'
                 sh '''cd devops_homework_17.03
                 ls -la
+                echo "ban" >> jnjelu
+                cat jnjelu
                 '''
                 
             }
