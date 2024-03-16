@@ -23,7 +23,8 @@ pipeline {
         }
         stage('build front image,push docker hub') {
             steps {
-                 withCredentials([string(credentialsId: 'github-token', variable: 'token'), string(credentialsId: 'docker-token', variable: 'dockertoken')]
+                 withCredentials([string(credentialsId: 'github-token', variable: 'token'), 
+                                  string(credentialsId: 'docker-token', variable: 'dockertoken')]
                                 ){
                      sh 'docker build -t front-image:$hash .'
                      sh 'docker images'
