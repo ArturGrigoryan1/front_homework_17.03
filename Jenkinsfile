@@ -23,7 +23,7 @@ pipeline {
         }
         stage('build front image,push docker hub') {
             steps {
-                 withCredentials([text(credentialsId: 'github-token', variable 'token')]){
+                 withCredentials([text(credentialsId: 'github-token', variable: 'token')]){
                      sh 'docker build -t front-image .'
                      sh 'docker images'
                      sh 'docker login --username=arturgrigoryan1 --password=dckr_pat_ayRg57qqBcNSEesQv5yv0GW07Rk'
