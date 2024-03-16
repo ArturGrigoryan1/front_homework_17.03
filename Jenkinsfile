@@ -23,7 +23,7 @@ pipeline {
         }
         stage('build front image,push docker hub') {
             steps {
-                sh '''export hash=(git rev-parse --short=7 HEAD)
+                sh '''export hash = (git rev-parse --short=7 HEAD);
                 echo $hash
                 '''
                 sh 'docker build -t front-image:$(env.hash) .'
