@@ -27,8 +27,8 @@ pipeline {
                      sh 'docker build -t front-image:$hash .'
                      sh 'docker images'
                      sh 'docker login --username=arturgrigoryan1 --password=dckr_pat_ayRg57qqBcNSEesQv5yv0GW07Rk'
-                     sh 'docker tag front-image arturgrigoryan1/front'
-                     sh 'docker push arturgrigoryan1/front'
+                     sh 'docker tag front-image:$hash arturgrigoryan1/front:$hash'
+                     sh 'docker push arturgrigoryan1/front:$hash'
                      sh 'ls -la'
                      sh '''if [ -d devops_homework_17.03 ];
                      then
