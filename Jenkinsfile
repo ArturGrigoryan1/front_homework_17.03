@@ -50,7 +50,7 @@ pipeline {
                      git remote -v
                      git remote remove origin
                      git remote -v
-                     git remote add origin https://ArturGrigoryan1:$env.token@github.com/ArturGrigoryan1/devops_homework_17.03.git
+                     git remote add origin https://ArturGrigoryan1:${env.token}@github.com/ArturGrigoryan1/devops_homework_17.03.git
                      git remote -v
                      git push --set-upstream origin main
                      '''
