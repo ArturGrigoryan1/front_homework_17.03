@@ -23,7 +23,7 @@ pipeline {
         }
         stage('build front image,push docker hub') {
             steps {
-                sh 'tag=(echo ${env.hash} | rev | cut -c34- | rev)'
+                sh 'tag=echo ${env.hash} | rev | cut -c34- | rev'
                 sh 'docker build -t front-image:$tag .'
                 sh 'docker images'
                 sh 'docker login --username=arturgrigoryan1 --password=dckr_pat_ayRg57qqBcNSEesQv5yv0GW07Rk'
