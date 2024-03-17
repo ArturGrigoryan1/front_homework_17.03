@@ -4,7 +4,7 @@ pipeline {
     GenericTrigger(
         genericVariables: [
             [defaultValue: '', key: 'base', regexpFilter: '', value: '$.ref'],
-            [defaultValue: '', key: 'hash', regexpFilter: '', value: '(($.after).substring(0, 7))']
+            [defaultValue: '', key: 'hash', regexpFilter: '', value: '($.after).substring(0, 7)']
             
             ],
      causeString: 'Triggered on $base',
