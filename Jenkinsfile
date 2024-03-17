@@ -19,9 +19,8 @@ pipeline {
             steps {
                 echo 'Hello world'
                 echo env.base
-                
                 echo env.hash
-     
+                sh 'echo $hash'
                 sh 'ls -la'
             }
         }
