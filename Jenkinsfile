@@ -4,7 +4,7 @@ pipeline {
     GenericTrigger(
         genericVariables: [
             [defaultValue: '', key: 'base', regexpFilter: '', value: '$.ref'],
-            [defaultValue: '', key: 'hash', regexpFilter: '', value: '$.after.substring(0,7)']
+            [defaultValue: '', key: 'hash', regexpFilter: '', value: '$.after']
             
             ],
      causeString: 'Triggered on $base',
@@ -16,7 +16,7 @@ pipeline {
             steps {
                 echo 'Hello world'
                 echo env.base
-                
+                env.hash="tandz"
                 echo env.hash
      
                 sh 'ls -la'
