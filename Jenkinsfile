@@ -18,7 +18,7 @@ pipeline {
                 echo env.base
                 
                 echo env.hash
-                set env.hash.substring(0,7)
+                $hash=env.hash.substring(0,7)
                 echo env.hash
      
                 sh 'ls -la'
