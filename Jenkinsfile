@@ -16,12 +16,11 @@ pipeline {
             steps {
                 echo 'Hello world'
                 echo env.base
+                
                 echo env.hash
-                def hash=env.hash.substring(0,7)
+                echo env.hash.substring(0,7)
                 echo env.hash
-        //        def originalString = "HelloWorld"
-        //        def firstSevenChars = originalString.substring(0, 7)
-        //        println(firstSevenChars)
+     
                 sh 'ls -la'
             }
         }
