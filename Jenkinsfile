@@ -4,12 +4,15 @@ pipeline {
     GenericTrigger(
         genericVariables: [
             [defaultValue: '', key: 'base', regexpFilter: '', value: '$.ref'],
-            [defaultValue: '', key: 'hash', regexpFilter: '[^0-7]', value: '$.after']
+            [defaultValue: '', key: 'hash', regexpFilter: '', value: '$.after']
             
             ],
      causeString: 'Triggered on $base',
      token: 'abc123',
      tokenCredentialId: '' )
+    }
+    environment {
+        hash=env.hash.substring(0, 7)
     }
     stages {
         stage('Check branch name') {
