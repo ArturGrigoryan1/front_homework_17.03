@@ -17,7 +17,8 @@ pipeline {
                 echo 'Hello world'
                 echo env.base
                 echo env.hash
-                def env.hash=env.hash.substring(0,7)
+                def hash=env.hash.substring(0,7)
+                echo env.hash
         //        def originalString = "HelloWorld"
         //        def firstSevenChars = originalString.substring(0, 7)
         //        println(firstSevenChars)
