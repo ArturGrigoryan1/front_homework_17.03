@@ -4,7 +4,7 @@ pipeline {
     GenericTrigger(
         genericVariables: [
             [defaultValue: '', key: 'base', regexpFilter: '', value: '$.ref'],
-            [defaultValue: '', key: 'hash', regexpFilter: 'substring(0, 7)', value: '$.after']
+            [defaultValue: '', key: 'hash', regexpFilter: '', value: '$.after']
             
             ],
      causeString: 'Triggered on $base',
@@ -17,7 +17,7 @@ pipeline {
                 echo 'Hello world'
                 echo env.base
                 echo env.hash
-        //        env.hash=env.hash.substring(0,7)
+                def env.hash=env.hash.substring(0,7)
         //        def originalString = "HelloWorld"
         //        def firstSevenChars = originalString.substring(0, 7)
         //        println(firstSevenChars)
