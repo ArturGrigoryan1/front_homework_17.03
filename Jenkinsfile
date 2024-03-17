@@ -43,8 +43,7 @@ pipeline {
                      ls -la
                      git config --global user.email "arturishkhanich@gmail.com"
                      git config --global user.name "Artur"
-                     echo "ban" >> jnjelu
-                     cat jnjelu
+                     python3 main.py
                      git status
                      git add .
                      git status
