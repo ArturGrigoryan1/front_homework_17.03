@@ -17,6 +17,7 @@ pipeline {
                 echo 'Hello world'
                 echo env.base
                 echo env.hash
+                hash=hash.substring(0,7)
                 
                 sh 'ls -la'
             }
