@@ -45,16 +45,14 @@ pipeline {
                      sh '''cd devops_homework_17.03
                      git config --global user.email "arturishkhanich@gmail.com"
                      git config --global user.name "Artur"
-                     python3 main.py
+                     python3 front.py
                      git add .
                      git commit -m "change in frontend"
                      git remote remove origin
                      git remote add origin https://ArturGrigoryan1:$token@github.com/ArturGrigoryan1/devops_homework_17.03.git
                      git remote -v
                      git push --set-upstream origin main
-                     '''
-
-                     
+                     '''         
                  }
             }
         }
