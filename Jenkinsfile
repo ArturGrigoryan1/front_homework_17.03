@@ -31,6 +31,19 @@ pipeline {
                         dockerImage = docker.build registry + ":$hash"
                     }
                 }
+        }
+        stage('Deploy our image') {
+            steps{
+                script {
+                    docker.withRegistry( '', registryCredential ) {
+                        dockerImage.push()
+                    }
+                }
+            }
+        }
+
+
+        
 
 
         
