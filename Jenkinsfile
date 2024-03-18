@@ -15,13 +15,11 @@ pipeline {
         hash=env.hash.substring(0, 7)
     }
     stages {
-        stage('Check branch name') {
+        stage('check connection') {
             steps {
                 echo 'Hello world'
                 echo env.base
                 echo env.hash
-                sh 'echo $hash'
-                sh 'ls -la'
             }
         }
         stage('build front image,push docker hub') {
