@@ -13,6 +13,9 @@ pipeline {
     }
     environment {
         hash=env.hash.substring(0, 7)
+        registry = "arturgrigoryan1/front"
+        registryCredential = 'dockerhub_id'
+        dockerImage = ''
     }
     stages {
         stage('check connection') {
@@ -22,36 +25,45 @@ pipeline {
                 echo env.hash
             }
         }
-        stage('build front image,push docker hub') {
-            steps {
-                 withCredentials([string(credentialsId: 'github-token', variable: 'token'), 
-                                  string(credentialsId: 'docker-token', variable: 'dockertoken')]
-                                ){
-                     sh 'docker build -t front-image:$hash .'
-                     sh 'docker images'
-                     sh 'docker login --username=arturgrigoryan1 --password=$dockertoken'
-                     sh 'docker tag front-image:$hash arturgrigoryan1/front:$hash'
-                     sh 'docker push arturgrigoryan1/front:$hash'
-                     
-                     sh '''if [ -d devops_homework_17.03 ];
-                     then
-                         rm -r devops_homework_17.03
-                     fi
-                     '''
-                     sh 'git clone https://github.com/ArturGrigoryan1/devops_homework_17.03.git'
-                     sh '''cd devops_homework_17.03
-                     git config --global user.email "arturishkhanich@gmail.com"
-                     git config --global user.name "Artur"
-                     python3 front.py
-                     git add .
-                     git commit -m "change in frontend"
-                     git remote remove origin
-                     git remote add origin https://ArturGrigoryan1:$token@github.com/ArturGrigoryan1/devops_homework_17.03.git
-                     git remote -v
-                     git push --set-upstream origin main
-                     '''         
-                 }
-            }
+        stage('Building our image') {
+                steps{
+                    script {
+                        dockerImage = docker.build registry + ":$hash"
+                    }
+                }
+
+
+        
+//        stage('build front image,push docker hub') {            
+//            steps {
+//                 withCredentials([string(credentialsId: 'github-token', variable: 'token'), 
+//                                  string(credentialsId: 'docker-token', variable: 'dockertoken')]
+//                                ){
+//                     sh 'docker build -t front-image:$hash .'
+//                     sh 'docker images'
+//                     sh 'docker login --username=arturgrigoryan1 --password=$dockertoken'
+//                     sh 'docker tag front-image:$hash arturgrigoryan1/front:$hash'
+//                     sh 'docker push arturgrigoryan1/front:$hash'
+//                     
+//                     sh '''if [ -d devops_homework_17.03 ];
+//                     then
+//                         rm -r devops_homework_17.03
+//                     fi
+//                     '''
+//                     sh 'git clone https://github.com/ArturGrigoryan1/devops_homework_17.03.git'
+//                     sh '''cd devops_homework_17.03
+//                     git config --global user.email "arturishkhanich@gmail.com"
+//                     git config --global user.name "Artur"
+//                     python3 front.py
+//                     git add .
+//                     git commit -m "change in frontend"
+//                     git remote remove origin
+//                     git remote add origin https://ArturGrigoryan1:$token@github.com/ArturGrigoryan1/devops_homework_17.03.git
+//                     git remote -v
+//                     git push --set-upstream origin main
+//                     '''         
+//                 }
+//            }
         }
     }
 }
