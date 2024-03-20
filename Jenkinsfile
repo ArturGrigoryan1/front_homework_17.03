@@ -69,6 +69,7 @@ pipeline {
                      '''         
                      sh 'cd ..'
                      sh 'ls -la'
+                     
                  }
             }
         }
