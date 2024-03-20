@@ -51,6 +51,7 @@ pipeline {
                      then
                          rm -r devops_homework_17.03
                      fi
+                     
                      git branch: 'main', url: 'https://github.com/ArturGrigoryan1/devops_homework_17.03.git'
                      '''
                      //sh 'git clone https://github.com/ArturGrigoryan1/devops_homework_17.03.git'
