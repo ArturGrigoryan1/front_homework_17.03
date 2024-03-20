@@ -47,11 +47,6 @@ pipeline {
             steps {
                  withCredentials([string(credentialsId: 'github-token', variable: 'token')]
                                 ){                    
-                     sh '''if [ -d devops_homework_17.03 ];
-                     then
-                         rm -r devops_homework_17.03
-                     fi
-                     '''
                      git branch: 'main', url: 'https://github.com/ArturGrigoryan1/devops_homework_17.03.git'
                      sh '''git config --global user.email "arturishkhanich@gmail.com"
                      git config --global user.name "Artur"
