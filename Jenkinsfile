@@ -52,6 +52,7 @@ pipeline {
                          rm -r devops_homework_17.03
                      fi
                      '''
+                     sh 'ls -la'
                      git branch: 'main', url: 'https://github.com/ArturGrigoryan1/devops_homework_17.03.git'
                      sh 'ls -la'
                      //sh 'git clone https://github.com/ArturGrigoryan1/devops_homework_17.03.git'
@@ -66,7 +67,8 @@ pipeline {
                      git remote -v
                      git push --set-upstream origin main
                      '''         
-                     
+                     sh 'cd ..'
+                     sh 'ls -la'
                  }
             }
         }
