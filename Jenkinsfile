@@ -52,11 +52,7 @@ pipeline {
                          rm -r devops_homework_17.03
                      fi
                      '''
-                     sh 'ls -la'
                      git branch: 'main', url: 'https://github.com/ArturGrigoryan1/devops_homework_17.03.git'
-                     sh 'ls -la'
-                     //sh 'git clone https://github.com/ArturGrigoryan1/devops_homework_17.03.git'
-                   //  sh '''cd devops_homework_17.03
                      sh '''git config --global user.email "arturishkhanich@gmail.com"
                      git config --global user.name "Artur"
                      python3 front.py
@@ -66,9 +62,7 @@ pipeline {
                      git remote add origin https://ArturGrigoryan1:$token@github.com/ArturGrigoryan1/devops_homework_17.03.git
                      git remote -v
                      git push --set-upstream origin main
-                     '''         
-                     sh 'cd ..'
-                     sh 'ls -la'  
+                     '''
                  }
             }
         }
