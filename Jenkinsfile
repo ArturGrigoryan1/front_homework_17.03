@@ -51,12 +51,11 @@ pipeline {
                      then
                          rm -r devops_homework_17.03
                      fi
-                     
-                     git branch: 'main', url: 'https://github.com/ArturGrigoryan1/devops_homework_17.03.git'
                      '''
+                     git branch: 'main', url: 'https://github.com/ArturGrigoryan1/devops_homework_17.03.git'
                      //sh 'git clone https://github.com/ArturGrigoryan1/devops_homework_17.03.git'
                    //  sh '''cd devops_homework_17.03
-                     git config --global user.email "arturishkhanich@gmail.com"
+                     sh '''git config --global user.email "arturishkhanich@gmail.com"
                      git config --global user.name "Artur"
                      python3 front.py
                      git add .
