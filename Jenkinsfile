@@ -68,8 +68,7 @@ pipeline {
                      git push --set-upstream origin main
                      '''         
                      sh 'cd ..'
-                     sh 'ls -la'
-                     
+                     sh 'ls -la'  
                  }
             }
         }
