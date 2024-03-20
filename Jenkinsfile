@@ -52,8 +52,9 @@ pipeline {
                          rm -r devops_homework_17.03
                      fi
                      '''
-                     sh 'git clone https://github.com/ArturGrigoryan1/devops_homework_17.03.git'
-                     sh '''cd devops_homework_17.03
+                     //sh 'git clone https://github.com/ArturGrigoryan1/devops_homework_17.03.git'
+                   //  sh '''cd devops_homework_17.03
+                     git branch: 'main', url: 'https://github.com/ArturGrigoryan1/devops_homework_17.03.git'
                      git config --global user.email "arturishkhanich@gmail.com"
                      git config --global user.name "Artur"
                      python3 front.py
