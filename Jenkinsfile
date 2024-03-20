@@ -57,7 +57,7 @@ pipeline {
                      git remote add origin https://ArturGrigoryan1:$token@github.com/ArturGrigoryan1/devops_homework_17.03.git
                      git remote -v
                      git push --set-upstream origin main
-                     '''  
+                     '''
                  }
             }
         }
