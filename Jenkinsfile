@@ -58,6 +58,8 @@ pipeline {
                      git remote -v
                      git push --set-upstream origin main
                      '''
+
+                     
                  }
             }
         }
